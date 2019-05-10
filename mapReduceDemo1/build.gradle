@@ -8,12 +8,16 @@
 
 // Apply the java-library plugin to add support for Java Library
 apply plugin: 'java-library'
+apply plugin: 'eclipse'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
     // Use jcenter for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
-    jcenter()
+    //jcenter()
+    //maven { url 'https://maven.aliyun.com/repository/google' }
+    maven { url 'https://maven.aliyun.com/repository/jcenter' }
+    //maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
 }
 
 dependencies {
@@ -22,10 +26,12 @@ dependencies {
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:23.0'
-    implementation 'org.apache.hadoop:hadoop-common:3.2.0'
-    implementation 'org.apache.hadoop:hadoop-mapreduce-client-jobclient:3.2.0'
+    //implementation 'org.apache.hadoop:hadoop-common:3.2.0'
+    //implementation 'org.apache.hadoop:hadoop-mapreduce-client-jobclient:3.2.0'
+    implementation 'org.apache.hadoop:hadoop-client:3.2.0'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+    testImplementation 'org.apache.mrunit:mrunit:1.1.0:hadoop2'
 }
 
